@@ -1,0 +1,86 @@
+/* DESIGN INTEGRADO DA TELA DE SUCESSO - NOTEBOOK E MOBILE */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page-sucesso-wrapper {
+    background-color: #e8f5e9 !important; /* Mantém o padrão verde suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+/* CONTAINER DO SUCESSO EXPANDIDO PARA PC */
+.sucesso-container {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important; 
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 550px; /* Formato maior e imponente para Notebook e Tablet */
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* ÍCONE COM ANIMAÇÃO */
+.icone-sucesso-box {
+    font-size: 5.5rem;
+    color: #2ecc71; 
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+.sucesso-titulo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #3e3e3e;
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+}
+
+.sucesso-texto {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    padding: 0 10px;
+}
+
+/* BOTÃO DE RETORNO OVAL DE ALTO PADRÃO */
+.btn-voltar-inicio {
+    width: 100%;
+    height: 54px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 27px;
+    font-size: 1.15rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.25);
+    transition: all 0.2s ease;
+}
+
+.btn-voltar-inicio:hover {
+    background-color: #27ae60;
+    transform: translateY(-1px);
+}
+
+/* ADAPTAÇÃO PARA TELEMÓVEL / CELULAR */
+@media (max-width: 480px) {
+    .sucesso-container {
+        padding: 35px 20px;
+        border-radius: 18px;
+    }
+    .icone-sucesso-box { font-size: 4.2rem; margin-bottom: 18px; }
+    .sucesso-titulo { font-size: 1.4rem; margin-bottom: 10px; }
+    .sucesso-texto { font-size: 0.95rem; margin-bottom: 25px; }
+    .btn-voltar-inicio { height: 48px; border-radius: 24px; font-size: 1.05rem; }
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Mobile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="grafico.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="header">
+            <button class="back-btn" id="backBtn">
+                <i class="fa-solid fa-chevron-left"></i> 
+            </button>
+        </header>
+
+        <section class="kpi-container">
+            <div class="kpi-card">
+                <span class="kpi-title">Compras</span>
+                <div class="icon-box">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <span class="kpi-value">50.987</span>
+            </div>
+
+            <div class="kpi-card active">
+                <span class="kpi-title">usuários</span>
+                <div class="icon-box">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <span class="kpi-value">12.450</span>
+            </div>
+
+            <div class="kpi-card">
+                <span class="kpi-title">estabelecimentos ativos</span>
+                <div class="icon-box">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+                <span class="kpi-value">385</span>
+            </div>
+        </section>
+
+        <div class="chart-legend">
+            <div class="legend-item">
+                <span class="legend-color color-red"></span>
+                <span class="legend-text">Crescimento de Usuários</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color color-blue"></span>
+                <span class="legend-text">Desempenho dos Estabelecimentos</span>
+            </div>
+        </div>
+
+        <section class="chart-section">
+            <div class="chart-grid">
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+            </div>
+            
+            <div class="chart-bars-wrapper">
+                <div class="chart-group">
+                    <div class="bars">
+                        <div class="bar bar-blue" style="height: 80%;"></div>
+                        <div class="bar bar-red" style="height: 50%;"></div>
+                    </div>
+                    <span class="month-label">Jan</span>
+                </div>
+                <div class="chart-group">
+                    <div class="bars">
+                        <div class="bar bar-blue" style="height: 83%;"></div>
+                        <div class="bar bar-red" style="height: 49%;"></div>
+                    </div>
+                    <span class="month-label">Fev</span>
+                </div>
+                <div class="chart-group">
+                    <div class="bars">
+                        <div class="bar bar-blue" style="height: 86%;"></div>
+                        <div class="bar bar-red" style="height: 25%;"></div>
+                    </div>
+                    <span class="month-label">Mar</span>
+                </div>
+                <div class="chart-group">
+                    <div class="bars">
+                        <div class="bar bar-blue" style="height: 68%;"></div>
+                        <div class="bar bar-red" style="height: 45%;"></div>
+                    </div>
+                    <span class="month-label">Abr</span>
+                </div>
+                <div class="chart-group">
+                    <div class="bars">
+                        <div class="bar bar-blue" style="height: 75%;"></div>
+                        <div class="bar bar-red" style="height: 54%;"></div>
+                    </div>
+                    <span class="month-label">Mai</span>
+                </div>
+                <div class="chart-group">
+                    <div class="bars">
+                        <div class="bar bar-blue" style="height: 77%;"></div>
+                        <div class="bar bar-red" style="height: 55%;"></div>
+                    </div>
+                    <span class="month-label">Jun</span>
+                </div>
+                <div class="chart-group">
+                    <div class="bars">
+                        <div class="bar bar-blue" style="height: 36%;"></div>
+                        <div class="bar bar-red" style="height: 77%;"></div>
+                    </div>
+                    <span class="month-label">Jul</span>
+                </div>
+                <div class="chart-group">
+                    <div class="bars">
+                        <div class="bar bar-blue" style="height: 85%;"></div>
+                        <div class="bar bar-red" style="height: 85%;"></div>
+                    </div>
+                    <span class="month-label">Ago</span>
+                </div>
+                <div class="chart-group">
+                    <div class="bars">
+                        <div class="bar bar-blue" style="height: 85%;"></div>
+                        <div class="bar bar-red" style="height: 45%;"></div>
+                    </div>
+                    <span class="month-label">Set</span>
+                </div>
+                <div class="chart-group">
+                    <div class="bars">
+                        <div class="bar bar-blue" style="height: 48%;"></div>
+                        <div class="bar bar-red" style="height: 88%;"></div>
+                    </div>
+                    <span class="month-label">Out</span>
+                </div>
+                <div class="chart-group">
+                    <div class="bars">
+                        <div class="bar bar-blue" style="height: 70%;"></div>
+                        <div class="bar bar-red" style="height: 30%;"></div>
+                    </div>
+                    <span class="month-label">Nov</span>
+                </div>
+                <div class="chart-group">
+                    <div class="bars">
+                        <div class="bar bar-blue" style="height: 92%;"></div>
+                        <div class="bar bar-red" style="height: 55%;"></div>
+                    </div>
+                    <span class="month-label">Dez</span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer-action">
+            <button class="btn-details" id="detailsBtn">Ver detalhes</button>
+        </footer>
+    </div>
+
+    <script src="grafico.js"></script>
+</body>
+</html>

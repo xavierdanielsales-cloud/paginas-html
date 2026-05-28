@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - SaveFood</title>
+    <link rel="stylesheet" href="telainicial.css">
+    <script src="https://kit.fontawesome.com/19d9bf0fc2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="conteiner-app">
+    <header class="header-main">
+              <div class="logo-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 180" width="100%" height="100%">
+                      <defs>
+                          
+                          <style>
+                              @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap'); font-family: 'Quicksand', sans-serif; font-weight: 700;
+                              .logo-text {
+                                  font-size: 30px;
+                                  text-anchor: middle;
+                                }
+                            </style>
+                        </defs>
+                        <!-- Grupo do Ícone Centralizado -->
+                        <g transform="translate(93.6, 40) scale(1.45)" style="--color-primary: #10b981">
+                            <svg width="96" height="96" viewBox="0 0 24 24" fill="#1e293b">
+                                
+                                <!-- Saco de compras de papel / tecido ecológico -->
+                                <path d="M6 9h12l1 10H5L6 9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <!-- Pega do saco -->
+                                <path d="M9 9a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="2" />
+                                <!-- Grafismo de Folha no Saco -->
+                                <path d="M10 16s2-3 4-3m-4 0s2 3 4 3" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" />
+                                
+                            </svg>
+                        </g>
+                        <!-- Texto Centralizado -->
+                        <text x="175" y="175" class="logo-text" font-family="Quicksand"><tspan fill="#10b981">Save</tspan><tspan fill="#1e293b">Food</tspan></text>
+                    </svg>
+                </div>
+                
+   <div class="header-icons">
+        <a href="perfildousuario.html"><i class="fa-solid fa-gear"></i></a>
+        <div class="notificacao-wrapper">
+            <a href="tela-notificacoes.html" id="notificacoes">
+                <i class="fa-solid fa-bell"></i>
+                <span class="badge" id="contador-notificacao">1</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+                <div class="busca-container">
+                    <div class="barra-busca">
+                <input type="text" placeholder="O que você procura?">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        
+        <div class="destaque-principal">
+            <div class="menu-inferior">
+                <a href="paginainicial.html" class="active1"><i class="fa-solid fa-house"></i></a>
+                <a href="#"><i class="fa-solid fa-receipt"></i></a>
+                <a href="reserva.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+            </div>
+
+            <div class="banner-destaque">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_OFXL3UhQORrcJCxVs8uh8nKLEivuVYJCzA&s" class="img-banner active" id="foto1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCMqqCWh3qCSBjddaa4Gtc9lKpqYjcCuNJdw&s" class="img-banner" id="foto2">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=1000" class="img-banner" id="foto3">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=1000" class="img-banner" id="foto4">
+            </div>
+        </div>
+        
+        <div class="categorias-grid">
+            <div class="cat-item btn-acao"><i class="fa-solid fa-candy-cane"></i></div>
+            <div class="cat-item btn-acao"><i class="fa-solid fa-drumstick-bite"></i></div>
+            <div class="cat-item btn-acao"><i class="fa-solid fa-seedling"></i></div>
+        </div>
+    </div>
+
+    <script src="telainicial.js"></script>
+</body>
+</html>

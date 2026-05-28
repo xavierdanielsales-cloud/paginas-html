@@ -1,0 +1,186 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Jersey 20", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8f5e9; /* Fundo padrão unificado */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contêiner principal seguindo o padrão mobile-first das outras telas */
+.conteiner {
+    width: 100%;
+    max-width: 430px; /* Base padrão para telemóvel idêntico ao Histórico/Endereço */
+    background-color: rgba(254, 254, 255, 0.95); 
+    border-radius: 25px;
+    padding: 25px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Mesma profundidade */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    transition: max-width 0.3s ease, padding 0.3s ease;
+}
+
+/* Área do Topo / Botão Voltar */
+.voltar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.voltar p {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.retornar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 24px; /* Tamanho da seta padronizado */
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.retornar:hover {
+    color: #2ecc71;
+    transform: translateX(-3px);
+}
+
+#produto1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.produto {
+    width: 100%;
+    height: 220px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.produto img {
+    max-width: 160px;
+    height: auto;
+    object-fit: contain;
+}
+
+.descrisao {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.descrisao .t1 { font-size: 32px; font-weight: bold; color: #333; }
+.descrisao .t2 { font-size: 28px; color: #2ecc71; font-weight: bold; }
+.descrisao .t3, .descrisao .t4 { font-size: 20px; color: #666; }
+.descrisao .t4 { font-size: 18px; color: #444; line-height: 1.4; margin-top: 5px; }
+.descrisao .t5 { font-size: 18px; color: #000; line-height: 1.4; margin-top: 5px; }
+.descrisao .t6 { font-size: 20px; color: #000; line-height: 1.4; margin-top: 5px; }
+
+.star {
+    color: #f1c40f;
+    font-size: 20px;
+    margin: 2px 0;
+}
+
+#adicinarProdutoNaReserva {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Botão de Ação Principal */
+button {
+    background-color: #2ecc71;
+    color: white;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-family: "Jersey 20", sans-serif;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES: RESPONSIVIDADE E ESCALA IGUAL ÀS OUTRAS TELAS
+   ========================================================================== */
+@media (max-width: 480px) {
+    .conteiner { 
+        width: 92%;              /* Recuo perfeito para o fundo verde aparecer no celular */
+        margin: 15px auto; 
+        border-radius: 25px;
+    }
+}
+
+@media (min-width: 768px) {
+    .conteiner {
+        max-width: 760px;        /* Expande no notebook/tablet mantendo a consistência */
+        padding: 40px 35px;
+    }
+    #produto1 {
+        flex-direction: row;     /* Coloca foto e descrição lado a lado em telas grandes */
+        align-items: flex-start;
+    }
+    .produto {
+        width: 45%;
+        height: 280px;
+    }
+    .descrisao {
+        width: 50%;
+    }
+}
+/* Container das estrelas */
+.star {
+    display: flex;
+    gap: 5px;
+    font-size: 24px;
+    margin: 8px 0;
+}
+
+/* Como as estrelas ficam antes de serem votadas (apagadas) */
+.star .fa-star {
+    color: #ccc; /* Cinza claro */
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.1s ease;
+}
+
+/* Efeito ao passar o mouse por cima */
+.star .fa-star:hover {
+    transform: scale(1.2);
+}
+
+/* Classe que o JavaScript vai colocar para "acender" as estrelas */
+.star .fa-star.active {
+    color: #f1c40f; /* Amarelo ouro original */
+}

@@ -1,0 +1,381 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #e8f5e9 !important; /* Fundo verde padrão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* CONTAINER PRINCIPAL (Mesmo esquema da reserva e pagamento) */
+.app-container {
+    width: 100%;
+    max-width: 850px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    transition: all 0.3s ease;
+}
+
+/* HEADER */
+.header {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+    color: #2ecc71;
+}
+
+
+
+.kpi-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.kpi-card {
+    flex: 1;
+    min-width: 0; /* IMPEDIMENTOS DE BUG: Força o card a respeitar o limite e quebrar o texto interno */
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 110px; /* Alinhamento vertical perfeito */
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+}
+
+.kpi-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #8c8c8c;
+    font-weight: 600;
+    line-height: 1.2;
+    padding-right: 20px; /* Abre espaço para o ícone */
+    display: block;
+    
+    /* SEGURANÇA PARA PALAVRAS GRANDES: */
+    word-break: break-word; 
+    hyphens: auto;
+}
+
+.icon-box {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 16px;
+    color: #b0b0b0;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kpi-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+/* Card Ativo */
+.kpi-card.active {
+    background-color: #4a90e2;
+    border-color: #4a90e2;
+}
+
+.kpi-card.active .kpi-title,
+.kpi-card.active .icon-box,
+.kpi-card.active .kpi-value {
+    color: #ffffff;
+}
+
+/* ========================================================== */
+/* COLECÇÃO DE REGRAS EXCLUSIVAS PARA CELULAR (MOBILE)        */
+/* ========================================================== */
+@media (max-width: 600px) {
+    .kpi-container {
+        gap: 6px; /* Diminui o vão entre os cards para ganhar espaço */
+        width: 100%;
+    }
+    
+    .kpi-card {
+        padding: 10px 8px; /* Reduz o preenchimento interno nas laterais */
+        min-height: 100px;
+    }
+    
+    .kpi-title {
+        font-size: 0.58rem; /* Letra ligeiramente menor para o celular encaixar o texto comprido */
+        padding-right: 12px;
+        letter-spacing: 0px;
+    }
+    
+    .icon-box {
+        top: 10px;
+        right: 8px;
+        font-size: 11px; /* Ícone reduzido para não bater nas letras */
+    }
+    
+    .kpi-value {
+        font-size: 1.1rem;
+    }
+}
+.chart-section {
+    background: #fdfefe;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+    padding: 25px 15px 15px 15px;
+    margin-bottom: 30px;
+    height: 380px; /* Altura total controlada da caixinha */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Linhas de fundo sutis */
+.chart-grid {
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    right: 15px;
+    bottom: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.grid-line {
+    width: 100%;
+    border-top: 1px dashed #eaeaea;
+}
+
+/* CONTAINER DAS BARRAS (Garante que os 12 meses dividem o espaço horizontal) */
+.chart-bars-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row; /* Força os meses lado a lado */
+    justify-content: space-between; /* Distribui de ponta a ponta perfeitamente */
+    align-items: flex-end; /* Mantém a base alinhada no chão */
+}
+
+/* Grupo de cada mês (Largura ajustada para caber todos os 12) */
+.chart-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 7.5%; /* Percentagem ideal calculada para 12 colunas no PC */
+    justify-content: flex-end;
+    flex-shrink: 1; /* Permite que o grupo se adapte se a janela diminuir */
+}
+
+/* Container interno das duas barras */
+.bars {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end; /* Começam sempre de baixo para cima */
+    gap: 3px; /* Espaço moderno e fininho entre a barra azul e vermelha */
+    height: 260px; /* Altura máxima em píxeis para o cálculo das percentagens */
+    width: 100%;
+    justify-content: center;
+}
+
+/* Configuração Individual da Barra Estilo Pílula Moderno */
+.bar {
+    width: 10px; /* Espessura ideal para 12 meses não se atropelarem */
+    border-radius: 5px 5px 0 0; /* Topo arredondado elegante */
+    transition: all 0.2s ease;
+}
+
+.bar:hover {
+    transform: scaleY(1.05);
+    filter: brightness(0.85);
+}
+
+.bar-blue { background-color: #4a90e2; }
+.bar-red { background-color: #ff6b6b; }
+
+/* Texto dos meses (Jan, Fev, Mar... até Dez) */
+.month-label {
+    margin-top: 10px;
+    font-size: 0.8rem; /* Tamanho de letra excelente para caber as 12 siglas */
+    color: #777777;
+    font-weight: 600;
+    text-align: center;
+    min-height: 20px;
+    white-space: nowrap; /* Impede que o texto quebre ou mude de linha */
+}
+/* FOOTER COM BOTÃO OVAL PADRÃO DO PROJETO */
+.footer-action {
+    width: 100%;
+}
+
+.btn-details {
+    width: 100%;
+    height: 54px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 27px;
+    font-size: 1.15rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.25);
+    transition: background 0.2s;
+}
+
+.btn-details:hover {
+    background-color: #27ae60;
+    transform: translateY(-1px);
+}
+/* ========================================================== */
+/* FORMATAÇÃO DOS QUADRADINHOS DA LEGENDA (IGUAL AO PRINT)    */
+/* ========================================================== */
+.chart-legend {
+    display: flex;
+    flex-direction: row; /* Força os itens a ficarem um ao lado do outro */
+    gap: 20px;          /* Espaço entre a legenda Azul e a Vermelha */
+    margin-bottom: 20px;
+    justify-content: flex-start; /* Alinha o bloco à esquerda */
+    width: 100%;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center; /* Alinha o quadradinho perfeitamente no meio do texto */
+    gap: 8px;           /* Espaço entre o quadradinho e o texto */
+}
+
+/* O SEGREDO AQUI: Transforma a tag span num quadrado real */
+.legend-color {
+    width: 14px;         /* Largura do quadradinho */
+    height: 14px;        /* Altura do quadradinho */
+    border-radius: 4px;  /* Cantos suavemente arredondados premium */
+    display: inline-block; /* Força o navegador a respeitar a altura e largura */
+    flex-shrink: 0;      /* Impede que o quadrado esmague em telas menores */
+}
+
+/* Cores exatas aplicadas nos quadradinhos */
+.color-blue { 
+    background-color: #4a90e2; 
+}
+
+.color-red { 
+    background-color: #ff6b6b; 
+}
+
+.legend-text {
+    font-size: 0.85rem;
+    color: #666666;
+    font-weight: 600;
+}
+
+/* --- AJUSTE DA LEGENDA PARA TELEMÓVEL --- */
+@media (max-width: 600px) {
+    .chart-legend {
+        gap: 12px;
+        margin-bottom: 15px;
+        flex-wrap: wrap; /* Se o ecrã for muito pequeno, eles quebram linha elegantemente */
+    }
+    .legend-text {
+        font-size: 0.75rem;
+    }
+    .legend-color {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* ========================================================== */
+/* RESPONSIVIDADE PARA TELEMÓVEL / CELULAR */
+/* ========================================================== */
+@media (max-width: 600px) {
+    body { padding: 15px 10px; }
+    
+    .app-container { 
+        padding: 20px 15px; 
+        border-radius: 18px;
+    }
+    
+    .header { margin-bottom: 15px; }
+
+    .kpi-container { 
+        gap: 10px; 
+        margin-bottom: 20px;
+    }
+    
+    .kpi-card { 
+        padding: 12px; 
+        border-radius: 12px;
+    }
+    
+    .kpi-title { font-size: 0.7rem; }
+    .kpi-value { font-size: 1.2rem; margin-top: 4px; }
+    .icon-box { top: 12px; right: 12px; font-size: 13px; }
+
+    .chart-section { 
+        height: 280px; 
+        padding: 20px 10px; 
+        margin-bottom: 20px; 
+    }
+    .chart-grid { top: 20px; left: 10px; right: 10px; bottom: 50px; }
+    .chart-group { width: 8%; }
+    .bars { gap: 2px; height: 80%; }
+    .bar { width: 8px; border-radius: 4px 4px 0 0; }
+    .month-label { font-size: 0.68rem; margin-top: 6px; }
+    
+    .btn-details { height: 48px; border-radius: 24px; font-size: 1.05rem; }
+}
+
+/* SUPORTE PARA TABLET */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .app-container { max-width: 650px; }
+    .chart-section { height: 320px; }
+}

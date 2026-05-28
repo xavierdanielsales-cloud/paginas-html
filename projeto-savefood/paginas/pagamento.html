@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Pedido</title>
+    <link rel="stylesheet" href="reserva.css"> 
+    <link rel="stylesheet" href="pagamento.css"> 
+    <script src="https://kit.fontawesome.com/19d9bf0fc2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="conteiner">
+        <div class="voltar">
+            <a href="reserva.html" id="voltar" class="retornar">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            <p>Finalizar pedido</p>
+        </div>
+
+        <div class="bloco-checkout">
+            
+            <h3 class="checkout-subtitulo">Endereço de entrega</h3>
+            
+            <div class="card-endereco">
+             <div class="endereco-detalhes">
+        <i class="fa-solid fa-location-dot icone-localizacao"></i>
+             <div class="endereco-texto">
+             <p class="endereco-titulo" id="txt-endereco-titulo">Minha Casa</p>
+             <p class="endereco-sub" id="txt-endereco-detalhes">Área Central, Bloco A - Brasília, DF</p>
+        </div>
+    </div>
+</div>
+
+            <h3 class="checkout-subtitulo">Resumo de valores</h3>
+            <div class="resumo-pedido">
+                <div class="resumo-linha">
+                    <span class="label-resumo">Subtotal</span>
+                    <span class="valor-resumo">R$ 27,89</span>
+                </div>
+                <div class="resumo-linha">
+                    <span class="label-resumo">Taxa de entrega</span>
+                    <span class="valor-resumo frete-gratis">Grátis</span>
+                </div>
+                <div class="resumo-linha total-destaque">
+                    <span>Total</span>
+                    <span>R$ 27,89</span>
+                </div>
+            
+
+            <form id="form-pagamento">
+                
+                <h3 class="checkout-subtitulo">Forma de pagamento</h3>
+                <div class="opcoes-pagamento">
+                    
+                    <div class="opcao-item selecionado" data-metodo="pix">
+                        <div class="opcao-conteudo">
+                            <div class="wrapper-icone-pix">
+                                <i class="fa-brands fa-pix"></i>
+                            </div>
+                            <div class="texto-metodo">
+                                <span class="nome-metodo">Pix</span>
+                                <span class="subtexto-metodo">Pague agora pelo aplicativo</span>
+                            </div>
+                        </div>
+                        <input type="radio" name="metodo_pagamento" value="pix" checked>
+                    </div>
+
+                    <div id="container-qr-pix" class="bloco-qr-pix">
+                        <p class="instrucao-pix">Escaneie o QR Code ou copie o código abaixo:</p>
+                        <div class="qr-placeholder">
+                            <i class="fa-solid fa-qrcode"></i>
+                        </div>
+                        <div class="copia-cola-container">
+                            <input type="text" class="input-copia-cola" value="JUMELA008" readonly id="pix-codigo">
+                            <button type="button" class="btn-copiar" id="btn-copiar-pix">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="opcao-item" data-metodo="cartao">
+                        <div class="opcao-conteudo">
+                            <div class="wrapper-icone-cartao">
+                                <i class="fa-solid fa-credit-card"></i>
+                            </div>
+                            <div class="texto-metodo">
+                                <span class="nome-metodo">Cartão de Crédito / Débito</span>
+                                <span class="subtexto-metodo">Pague na entrega ao receber</span>
+                            </div>
+                        </div>
+                        <input type="radio" name="metodo_pagamento" value="cartao">
+                    </div>
+
+                    <div class="opcao-item" data-metodo="dinheiro">
+                        <div class="opcao-conteudo">
+                            <div class="wrapper-icone-entrega">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                            </div>
+                            <div class="texto-metodo">
+                                <span class="nome-metodo">Dinheiro</span>
+                                <span class="subtexto-metodo">Pagar em cédulas físicas na entrega</span>
+                            </div>
+                        </div>
+                        <input type="radio" name="metodo_pagamento" value="dinheiro">
+                    </div>
+
+                </div>
+
+                <div class="checkout-footer">
+                    <button type="submit" class="btn-fazer-pedido">
+                        Fazer pedido
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="pagamento.js"></script>
+</body>
+</html>

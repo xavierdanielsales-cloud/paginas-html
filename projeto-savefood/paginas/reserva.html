@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Sacola</title>
+    <link rel="stylesheet" href="reserva.css">
+    <script src="https://kit.fontawesome.com/19d9bf0fc2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="conteiner">
+        
+        <div class="voltar">
+            <a href="#" id="voltar" class="retornar">
+<i class="fa-solid fa-chevron-left"></i>
+            </a>
+            <p>Reserva</p>
+        </div>
+        
+        <div class="conteiner1">
+            <span class="subtitulo-sacola">Meus itens</span>
+            <button class="btn-limpar" id="limpar">
+                <i class="fa-solid fa-trash-can"></i> Limpar sacola
+            </button>
+        </div>
+        
+        <div id="lista-reserva"></div>
+        
+        <div class="resumo-total-box">
+            <span class="label-total">Total do pedido</span>
+            <span class="total">R$ <span id="valor-total">0,00</span></span>
+        </div>
+        
+        <div class="footer">
+            <button class="finalizar" id="finalizar">
+                Avançar para o pagamento
+            </button>
+        </div>
+
+    </div>
+
+    <script src="reserva.js"></script>
+</body>
+</html>

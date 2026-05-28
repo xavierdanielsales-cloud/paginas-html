@@ -1,0 +1,202 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Jersey 20", sans-serif;
+    padding: 20px; 
+    background: 
+  linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+  url('https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg'); 
+  background-size: cover;
+  background-position: center;
+}
+
+.nome2 {
+  background-color: rgba(254, 254, 255, 0.85); 
+  
+    width: 100%;
+    max-width: 500px; 
+    padding: 40px 30px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Área do Nome */
+.nome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.icone1 i {
+    font-size: 70px;
+    color: #2ECC71;
+}
+
+h1 {
+    font-size: 35px;
+    color: #333;
+}
+
+.fa-pen {
+    cursor: pointer;
+    color: #2ECC71;
+    font-size: 20px;
+}
+
+
+.card {
+    background-color: #f8f8f8;
+    width: 100%;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #ddd;
+}
+
+.card:hover {
+    transform: translateX(8px);
+    background-color: #e8f8ee;
+    border-color: #2ECC71;
+}
+
+.card i {
+    font-size: 24px;
+    color: #2ECC71;
+    width: 30px;
+    text-align: center;
+}
+
+.card strong {
+    font-size: 22px;
+    color: #444;
+}
+
+/* O BOTÃO PADRONIZADO (IGUAL ÀS OUTRAS TELAS) */
+.botao2 {
+    width: 100%;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.button {
+    width: 100%;
+    height: 70px; /* Altura grande padrão */
+    background-color: #2ECC71; /* Cor de sair/voltar */
+    color: white;
+    border: none;
+    border-radius: 35px; /* Bem arredondado */
+    font-family: "Jersey 20", sans-serif;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(231, 76, 60, 0.2);
+    transition: transform 0.2s, background 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: #2ECC71;
+    transform: scale(1.02);
+}
+
+/*  CELULARES  */
+@media (max-width: 400px) {
+    .nome2 {
+        padding: 25px 15px;
+    }
+    h1 { font-size: 28px; }
+    .button { height: 60px; font-size: 24px; }
+}
+.perfil-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* O círculo da foto */
+.perfil-container {
+    width: 90px;
+    height: 90px;
+    border: 3px solid #2ECC71;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.perfil-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto não estique */
+}
+
+/* lixeira flutuante */
+.btn-remover-foto {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.btn-remover-foto:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+
+.icone1 {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #2ECC71;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.icone1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+

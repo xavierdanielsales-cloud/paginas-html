@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Endereço</title>
+    <link rel="stylesheet" href="endereco.css">
+    <script src="https://kit.fontawesome.com/19d9bf0fc2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="form-container">
+        <a href="perfildousuario.html" class="retornar">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
+
+        <h2>Cadastrar Endereço</h2>
+        <form id=\"address-form\">
+            <div class="row">
+                <div class="form-group col-1">
+                    <label for="cep">CEP</label>
+                    <input type="text" id="cep" placeholder="00000-000" maxlength="9">
+                </div>
+                <div class="form-group col-2">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" placeholder="Ex: Curitiba">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" placeholder="Ex: Santa Felicidade">
+            </div>
+
+            <div class="form-group">
+                <label for="rua">Rua/Logradouro</label>
+                <input type="text" id="rua" placeholder="Ex: Av. Manoel Ribas">
+            </div>
+            
+            <div class="row">
+                <div class="form-group col-1">
+                    <label for="numero">Número</label>
+                    <input type="text" id="numero" placeholder="123">
+                </div>
+                <div class="form-group col-2">
+                    <label for="complemento">Complemento (opcional)</label>
+                    <input type="text" id="complemento" placeholder="Apto, Bloco, Fundos...">
+                </div>
+            </div>
+
+            <button type="submit">Salvar Endereço</button>
+        </form>
+    </div>
+
+    <script src="endereco.js"></script>
+</body>
+</html>

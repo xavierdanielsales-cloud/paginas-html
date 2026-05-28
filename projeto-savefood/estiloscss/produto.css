@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Jersey 20", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteiner {
+    width: 360px;
+    height: auto;
+    border: 2px solid black;
+    background-color: #E67E22;
+
+}
+
+.voltar {
+    width: 129px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-left: 23px;
+    margin-top: 26px;
+
+}
+
+.voltar>p {
+    font-size: 36px;
+}
+
+.retornar {
+    font-size: 25px;
+    color: black;
+    margin-right: 20px;
+    cursor: pointer;
+
+}
+
+#produto1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 33px;
+}
+
+.produto {
+    width: 298px;
+    height: 199px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 3px 3px 4px 0px #00000075;
+
+}
+
+.produto>img {
+    width: 150px;
+    height: 159px;
+    border-radius: 20px;
+}
+
+.descrisao {
+    width: 295px;
+    height: 296px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.descrisao>.t1 {
+    font-size: 36px;
+}
+
+.descrisao>.t2 {
+    font-size: 30px;
+}
+
+.descrisao>.t3 {
+    font-size: 30px;
+}
+
+.descrisao>.t4 {
+    font-size: 25px;
+}
+
+.descrisao>.t5 {
+    font-size: 27px;
+}
+
+.star {
+    width: 196px;
+    height: 64px;
+
+}
+
+.star>p {
+    font-size: 27px;
+    margin-bottom: 11px;
+}
+
+.star>i {
+    font-size: 28px;
+}
+
+.btn-reserva {
+
+    width: 228px;
+    height: 63px;
+    margin-top: 11px;
+display: flex;
+align-items: center;
+}
+
+.btn-reserva>.btn {
+
+    width: 228px;
+    height: 63px;
+    background-color: #2ECC71;
+    font-size: 24px;
+    font-family: "Jersey 20", sans-serif;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 3px 3px 4px 0px #00000075;
+
+
+}
+#adicinarProdutoNaReserva{
+    width: 250px;
+    height: auto;
+    background-color: #2ECC71;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#adicinarProdutoNaReserva > input{
+    width: 50px;
+    height: 30px;
+    font-size: 25px;
+}
+#adicinarProdutoNaReserva > label{
+    font-size: 20px;
+}

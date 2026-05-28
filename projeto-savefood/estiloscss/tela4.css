@@ -1,0 +1,65 @@
+body {
+    background-color: lightgray;
+    font-family: "Jersey 20";
+    margin: 20px; 
+    text-align: center;
+}
+
+body {
+    width: 350px;
+    max-width: 90%;
+    background-color: white;
+    padding: 25px;
+    margin: 20px auto; 
+    text-align: center; 
+}
+
+h1 {
+    font-size: 1.5em;
+    color: black; 
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left; 
+    text-align: center;
+
+}
+
+p a{
+    color: darkblue; 
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+form p:nth-of-type(2) {
+    font-size: 0.8em;
+    color: #423f3f;
+    margin-top: 20px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #423f3f; 
+    border-radius: 10px;
+    background-color: white; 
+    font-size: 1em;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    height: 45px; 
+    border-radius: 30px; 
+    background-color:#2ecc71;
+    color: rgb(0, 0, 0);
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 390px;
+    box-shadow: 3px, 3px, 4px, 0px rgba(0, 0, 0, 0.481);
+}
+

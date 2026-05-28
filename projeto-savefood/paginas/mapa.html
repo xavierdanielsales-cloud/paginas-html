@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Mapa</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Material+Icons&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="mapa.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="search-container">
+            <input type="text" placeholder="Qual mercado de hoje?" id="search-input">
+        </div>
+
+        <div id="map"></div>
+
+        <button class="geo-btn" id="geo-btn">
+            <span class="material-icons">my_location</span>
+        </button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="mapa.js"></script>
+</body>
+</html>

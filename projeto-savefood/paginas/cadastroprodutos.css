@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Jersey 20", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+    padding: 20px;
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background: #e8f5e9;
+}
+
+/* Container Responsivo */
+.phone {
+    background-color: rgba(254, 254, 255, 0.9); 
+    width: 100%;
+    max-width: 450px;
+    padding: 30px 25px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Botão Voltar (Seta) com Animação */
+.btn-voltar {
+    color: #333;
+    font-size: 24px;
+    text-decoration: none;
+    align-self: flex-start;
+    
+    /* 1. Prepara a animação para ser suave (duração de 0.2 segundos) */
+    transition: 0.2s; 
+}
+
+/* 2. Aplica o movimento quando o rato/mouse passa por cima */
+.btn-voltar:hover {
+    transform: translateX(-5px); /* Move 5 píxeis para a esquerda */
+    color: #2ECC71;
+}
+
+/* Box de Upload Adaptável */
+.upload-box {
+    width: 100%; 
+    aspect-ratio: 16 / 9; 
+    background-color: #2c2c2c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden; /* Garante que a foto respeite as bordas arredondadas */
+    border: 2px dashed #2ECC71;
+}
+
+.upload-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.upload-box .icon i {
+    font-size: 35px;
+    color: #2ECC71;
+}
+
+.upload-box p {
+    font-size: 20px;
+}
+
+/* ESTILO DA FOTO QUANDO FOR ENVIADA */
+#previewFoto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher todo o espaço sem distorcer */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Formulário e Inputs */
+.cadastro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    display: block;
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-family: inherit; 
+    font-size: 20px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #2ECC71;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 18px;
+    text-align: center;
+    min-height: 20px;
+}
+
+.btn {
+    background-color: #2ECC71;
+    color: white;
+    width: 100%;
+    height: 75px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    font-family: "Jersey 20", sans-serif;
+    font-size: 30px;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
+    transition: transform 0.2s;
+}
+button:hover {
+    transform: scale(1.02);
+    background-color: #27ae60;
+}
+
+
+/* --- MEDIA QUERY: TABLETS E NOTEBOOKS --- */
+@media (min-width: 768px) {
+    .phone {
+        max-width: 700px;
+        padding: 50px;
+        gap: 25px;
+    }
+    .btn-voltar { font-size: 32px; }
+    .upload-box .icon i { font-size: 50px; }
+    .upload-box p { font-size: 26px; }
+    label { font-size: 28px; }
+    input { height: 65px; font-size: 24px; border-radius: 15px; }
+    .btn { height: 80px; font-size: 32px; border-radius: 40px; margin-top: 20px; }
+}

@@ -1,0 +1,82 @@
+body{
+   text-align: center;
+    font-family: "Jersey 20", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.e-mail{
+  
+    width: 325px;
+    height: 35px;
+  
+}
+input{
+    border-radius: 10px;
+    height: 35px;
+    width: 325px;
+    background-color: rgb(217, blue);
+
+}
+div{
+    color: black;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    
+   
+}
+.Emailc{
+    text-align: left;
+    font-size: 20px;
+    background-color: blue;
+
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#emailContainer{
+ margin-top: 100px;
+  width: 324px;
+  height: 70px;
+text-align: center;
+margin-bottom: 75px;
+align-items: center;
+}
+.E-mail{
+  font-family: "Jersey 20",sans-serif;
+  font-weight: 400;
+  font-style: normal;
+ 
+  text-align: left;
+
+}
+
+
+
+.tt{
+  margin-top: 140px;
+
+}
+.b{
+  margin-bottom: 390px;
+  background-color: #2ECC71;
+  color: rgb(0, 0, 0);
+  height: 36px;
+  width: 325px;
+  border-radius: 30px;
+  box-shadow: 3px 3px 4px 0px #00000075;
+  font-size: 20px;
+}
+h1{
+  color: #2ECC71;
+  margin-bottom: 15px;
+  margin-top: 100px;
+}
+

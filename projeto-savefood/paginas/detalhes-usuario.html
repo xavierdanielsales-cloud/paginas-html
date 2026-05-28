@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Usuário</title>
+    <link rel="stylesheet" href="detalhes-usuario.css"> 
+    <script src="https://kit.fontawesome.com/19d9bf0fc2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="conteiner">
+        <div class="voltar">
+            <a href="usuarios.html" class="retornar">
+               <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            <p>Informações do Perfil</p>
+        </div>
+
+        <div class="perfil-container">
+            <div class="foto-perfil-txt" id="perfilIniciais">--</div>
+
+            <div class="info-card">
+                <div class="campo">
+                    <span class="label">Nome Completo</span>
+                    <span class="valor" id="perfilNome">Carregando...</span>
+                </div>
+
+                <div class="campo">
+                    <span class="label">Tipo de Usuário</span>
+                    <span class="valor" id="perfilTipo" style="font-weight: bold;">Carregando...</span>
+                </div>
+
+                <div class="campo">
+                    <span class="label">Data de Cadastro</span>
+                    <span class="valor" id="perfilData">Carregando...</span>
+                </div>
+            </div>
+
+            <button class="btn-excluir" onclick="confirmarExclusao()">
+                <i class="fa-solid fa-trash-can"></i> Excluir Usuário
+            </button>
+        </div>
+    </div>
+
+   <script src="detalhes-usuario.js"></script>
+</body>
+</html>

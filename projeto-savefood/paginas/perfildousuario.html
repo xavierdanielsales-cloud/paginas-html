@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="Perfildousuario.css">
+    <script src="https://kit.fontawesome.com/19d9bf0fc2.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="nome2">
+        <div class="nome">
+    <div class="perfil-wrapper">
+        <div class="perfil-container" onclick="document.getElementById('uploadFoto').click();">
+            <img id="fotoPerfil" src="data:image/png;base64,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" alt="Foto de Perfil">
+            <input type="file" id="uploadFoto" style="display: none;" accept="image/*">
+        </div>
+        <button id="btnExcluirFoto" class="btn-remover-foto" title="Excluir foto">
+            <i class="fa-solid fa-trash"></i>
+        </button>
+    </div>
+    
+    <h1>Olá, João Victor</h1>
+    <i class="fa-solid fa-pen"></i>
+</div>
+
+        <div class="card" onclick="location.href='tela-notificacoes.html'">
+            <i class="fa-solid fa-bell"></i>
+            <strong>Notificações</strong>
+        </div>
+
+        <div class="card" onclick="location.href=''">
+            <i class="fa-solid fa-user"></i>
+            <strong>Dados pessoais</strong>
+        </div>
+
+        <div class="card" onclick="location.href='reserva.html'">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <strong>Meus pedidos</strong>
+        </div>
+      
+        <div class="card" onclick="location.href='historicodecompras.html'">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <strong>Históricos de compras</strong>
+        </div>
+
+        <div class="card" onclick="location.href='estatistica.html'">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <strong>Estatística</strong>
+        </div>
+
+        <div class="card" onclick="location.href='teladecadastro.html'">
+            <i class="fa-brands fa-wpforms"></i>
+            <strong>Tela de cadastro</strong>
+        </div>
+
+       
+        
+          
+            <button class ="button" onclick="location.href='telainicial.html'">Ir para página inicial</button>
+            
+        
+    </div>
+    <script src="Perfildousuario.js"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Jersey 20", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #e8f5e9;
+}
+
+.container {
+    background-color: rgba(254, 254, 255, 0.9); 
+    width: 100%;
+    max-width: 430px; /* Base padrão para celular */
+    padding: 25px 20px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: max-width 0.3s ease, padding 0.3s ease;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: rgb(0, 0, 0); 
+}
+
+.cabecalho h1 { 
+    font-size: 32px; 
+}
+
+/* Seta de voltar com animação */
+.voltar {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    transition: transform 0.2s ease;
+}
+
+.voltar:hover {
+    transform: translateX(-5px);
+    color: #2ECC71;
+}
+#produto{
+    text-decoration: none;
+    color: #000;
+}
+/* Área de Busca e Filtros */
+.controles-busca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.barrabusca {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    border-radius: 12px;
+    padding: 0 15px;
+    height: 48px;
+    border: 1px solid #e0e0e0;
+    
+}
+.barrabusca:hover{
+    border-color: #2ECC71;
+}
+.barrabusca i { 
+    color: #2ECC71; 
+    margin-right: 10px; 
+    font-size: 16px;
+}
+
+.buscar {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 18px;
+    background: transparent;
+
+}
+
+.btn-filtro {
+    background-color: #2ECC71;
+    color: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Lista de Conteúdo */
+#lista-ofertas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Card de Oferta com Posicionamento Amplo */
+.card-oferta {
+    background: white;
+    padding: 15px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #e2e8f0;
+    position: relative; /* Permite fixar elementos nas pontas internas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-oferta:hover { 
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px (0, 0, 0, 0.08);
+    border-color: #2ECC71;
+
+}
+
+/* Imagem do Produto */
+.imagem-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-prod {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: contain;
+    background-color: #fafafa;
+}
+
+/* Conteúdo de Texto Centralizado */
+.conteudo-produto {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* ESTE COMANDO: Força tudo a ficar um embaixo do outro */
+    gap: 10px;              /* Cria um espaçamento idêntico e limpo entre as linhas */
+}
+
+.nome-prod { 
+    font-size: 22px; 
+    font-weight: bold; 
+    color: #2d3748;
+}
+
+.preco-prod { 
+    font-size: 20px; 
+    font-weight: bold; 
+    color: #1a202c; 
+    margin-top: 2px;
+    flex-direction: column;
+}
+
+.local-prod { 
+    font-size: 14px; 
+    color: #718096; 
+    margin-top: 4px;
+    
+}
+.local-prod:hover{
+    color: #2ECC71;
+}
+/* STATUS BOLINHA - Fixada no canto superior direito conforme a imagem */
+.status-bolinha {
+    width: 14px; 
+    height: 14px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.status-bolinha.laranja { background-color: #E67E22; }
+.status-bolinha.amarela { background-color: #F1C40F; }
+.status-bolinha.verde { background-color: #27AE60; }
+
+/* BOTÃO IR / CARRINHO - Fixado no canto inferior direito conforme o desenho */
+.btn-ir {
+    background: transparent;
+    border: none;
+    color: #4a5568;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.btn-ir:hover {
+    color: #2ECC71;
+    transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 760px; /* Alarga o container de forma ideal para telas grandes */
+        padding: 45px 35px;
+        gap: 30px;
+    }
+
+    .cabecalho h1 { font-size: 44px; }
+    .voltar { font-size: 34px; }
+    
+    /* Ampliação dos controles de busca */
+    .barrabusca { height: 58px; border-radius: 16px; padding: 0 20px; }
+    .barrabusca i { font-size: 22px; margin-right: 12px; }
+    .buscar { font-size: 24px; }
+    .btn-filtro { width: 58px; height: 58px; border-radius: 16px; font-size: 24px; }
+
+    .card-oferta { padding: 25px; gap: 25px; border-radius: 24px; }
+    .img-prod { width: 110px; height: 110px; border-radius: 18px; }
+    
+    .nome-prod { font-size: 32px; }
+    .preco-prod { font-size: 28px; }
+    .local-prod { font-size: 19px; }
+
+    .status-bolinha { width: 20px; height: 20px; top: 25px; right: 25px; }
+    .btn-ir { font-size: 30px; bottom: 25px; right: 25px; }
+}

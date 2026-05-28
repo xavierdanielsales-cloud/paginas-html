@@ -1,0 +1,289 @@
+.conteiner{
+    font-family: "jersey 20", sans-serif;
+}
+.bloco-checkout {
+    margin-top: 15px;
+}
+
+.checkout-subtitulo {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #3e3e3e;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+}
+
+/* CARDS E BLOCOS (Mantendo o padrão limpo com box-shadow premium) */
+.resumo-pedido, 
+.card-endereco, 
+.card-cupom, 
+.opcao-item,
+.bloco-qr-pix {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.2s ease;
+}
+
+/* BLOCO DE ENDEREÇO */
+.card-endereco {
+    padding: 16px;
+}
+
+.endereco-detalhes {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.icone-localizacao {
+    font-size: 1.3rem;
+    color: #2ecc71;
+}
+
+.endereco-titulo {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #3e3e3e;
+}
+
+.endereco-sub {
+    font-size: 0.85rem;
+    color: #717171;
+    margin-top: 2px;
+}
+
+/* BOX DO RESUMO DE VALORES */
+.resumo-pedido {
+    padding: 16px;
+}
+
+.resumo-linha {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.label-resumo {
+    color: #717171;
+}
+
+.valor-resumo {
+    color: #3e3e3e;
+    font-weight: 500;
+}
+
+.frete-gratis {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.total-destaque {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed #eee;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 0;
+}
+
+/* BLOCO DO CUPOM DE DESCONTO */
+.card-cupom {
+    display: flex;
+    padding: 10px 14px;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-cupom {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.btn-cupom {
+    background: transparent;
+    border: none;
+    color: #2ecc71;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.2s;
+}
+
+.btn-cupom:hover {
+    color: #27ae60;
+}
+
+/* LISTA DE OPÇÕES DE PAGAMENTO */
+.opcoes-pagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.opcao-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.opcao-item:hover {
+    transform: translateY(-1px);
+}
+
+/* INTERAÇÃO VISUAL DA SELEÇÃO */
+.opcao-item.selecionado {
+    border-color: #2ecc71;
+    background-color: rgba(46, 204, 113, 0.02);
+}
+
+.opcao-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* CORES DOS ÍCONES */
+.wrapper-icone-pix i { color: #32bcad; font-size: 1.2rem; width: 20px; text-align: center; }
+.wrapper-icone-cartao i { color: #5b69bc; font-size: 1.2rem; width: 20px; text-align: center; }
+.wrapper-icone-entrega i { color: #e67e22; font-size: 1.2rem; width: 20px; text-align: center; }
+
+.texto-metodo { display: flex; flex-direction: column; gap: 2px; }
+.nome-metodo { font-size: 0.95rem; font-weight: 600; color: #3e3e3e; }
+.subtexto-metodo { font-size: 0.8rem; color: #9e9e9e; }
+
+.opcao-item input[type="radio"] {
+    accent-color: #2ecc71;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* NOVO: DESIGN DO CONTAINER PIX DINÂMICO */
+.bloco-qr-pix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: -4px;
+    margin-bottom: 4px;
+    border-top: none;
+    border-radius: 0 0 12px 12px; /* Encaixa perfeitamente embaixo do card Pix */
+    animation: fadeIn 0.3s ease-out;
+}
+
+.instrucao-pix {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.qr-placeholder {
+    font-size: 7rem;
+    color: #333;
+    margin-bottom: 15px;
+    background: #fcfcfc;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px dashed #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copia-cola-container {
+    display: flex;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.input-copia-cola {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px;
+    font-size: 0.8rem;
+    color: #555;
+    outline: none;
+}
+
+.btn-copiar {
+    background-color: #32bcad;
+    color: white;
+    border: none;
+    padding: 0 16px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-copiar:hover {
+    background-color: #2a9f92;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* FOOTER */
+.checkout-footer {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.btn-fazer-pedido {
+    width: 100%;
+    padding: 16px;
+    background-color: #2ecc71;
+    color: #ffffff;
+    border: none;
+    border-radius: 27px;
+    font-size: 1.15rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.25);    
+    transition: all 0.2s ease;
+}
+
+.btn-fazer-pedido:hover {
+    background-color: #27ae60;
+    transform: translateY(-1px);
+}
+/* RESPONSIVIDADE PARA TELEMÓVEL / CELULAR */
+@media (max-width: 520px) {
+    body { padding: 15px 10px; }
+    .conteiner { max-width: 100%; padding: 20px 15px; border-radius: 18px; }
+    .voltar { margin-bottom: 15px; }
+    .voltar p { font-size: 1.25rem; }
+    .checkout-subtitulo { font-size: 1.1rem; margin-top: 18px; }
+    .resumo-pedido, .card-endereco, .card-cupom, .opcao-item, .bloco-qr-pix { padding: 14px 16px; border-radius: 12px; }
+    .endereco-titulo, .nome-metodo { font-size: 1rem; }
+    .endereco-sub, .subtexto-metodo, .linha-resumo { font-size: 0.9rem; }
+    .linha-resumo.total-destaque { font-size: 1.15rem; }
+    .qr-code-imagem { width: 140px; height: 140px; }
+    .input-copia-cola { padding: 10px; font-size: 0.8rem; }
+    .btn-copiar { padding: 0 16px; font-size: 0.85rem; }
+    .btn-fazer-pedido { height: 48px; border-radius: 24px; font-size: 1.05rem; }
+}
+
+/* ADAPTAÇÃO PARA TABLET */
+@media (min-width: 521px) and (max-width: 1024px) {
+    .conteiner { max-width: 650px; padding: 25px 20px; }
+}

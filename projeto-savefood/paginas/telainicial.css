@@ -1,0 +1,324 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Jersey 20", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Garante o alinhamento vertical idêntico às outras telas */
+    min-height: 100vh;
+    padding: 20px; /* Cria o respiro em volta do app no computador */
+    background-color: #e8f5e9; /* Fundo unificado do ecossistema */
+}
+
+/* Contêiner Principal - Mobile First e padronizado */
+.conteiner-app {
+    width: 100%;
+    max-width: 430px; /* Alinhado perfeitamente com Histórico e Ofertas */
+    background-color: white;
+    padding: 25px 20px; /* Mesmos espaçamentos internos das outras telas */
+    border-radius: 25px; /* Força os cantos arredondados */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Mesma profundidade */
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    transition: max-width 0.3s ease;
+}
+/* ========================================================== */
+/* CABEÇALHO PREMIUM: LOGO À ESQUERDA E ÍCONES À DIREITA     */
+/* ========================================================== */
+.header-main {
+    display: flex;
+    flex-direction: row;      /* Mantém os elementos na mesma linha */
+    justify-content: space-between; /* Empurra a logo para a esquerda e o sino para a direita */
+    align-items: center;      /* Centraliza verticalmente o sino com a logo */
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 10px 0;
+}
+
+/* CONTAINER DA LOGO - ENCOSTADO À ESQUERDA (TELA DO PC) */
+.logo-svg {
+    width: 200px;             /* Tamanho grande e imponente para computadores */
+    height: 110px;
+    display: flex;
+    justify-content: flex-start; /* Alinha o vetor do logo à esquerda */
+    align-items: center;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.logo-svg:hover {
+    transform: scale(1.03);
+}
+
+.logo-svg svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* CAIXA DO ÍCONE PRETO TRAVADA NA EXTREMIDADE DIREITA */
+.notificacao-box {
+    display: flex;
+    align-items: center;
+    position: relative;       /* Âncora para a bolinha vermelha */
+    cursor: pointer;
+    padding: 5px;
+    margin-left: auto;        /* Empurra totalmente para o canto direito */
+}
+
+/* Estilização do ícone preto puro */
+.notificacao-box i {
+    font-size: 26px;
+    color: #000000 !important; /* Força a cor preta */
+    transition: transform 0.2s;
+}
+
+.notificacao-box i:hover {
+    transform: scale(1.1);
+}
+
+/* BALÃO DO CONTADOR DE NOTIFICAÇÕES */
+#contador-notificacao {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+@media (max-width: 480px) {
+    .header-main {
+        margin-bottom: 15px; /* Diminui o espaço vazio de baixo no celular */
+        padding: 5px 0;
+    }
+
+    /* O ajuste chave aqui: reduzimos ligeiramente para caber milimetricamente no telemóvel sem esmagar */
+    .logo-svg {
+        width: 160px;        /* Tamanho perfeitamente equilibrado para a tela pequena */
+        height: 88px;        /* Proporção mantida idêntica para não distorcer */
+    }
+
+    .notificacao-box i {
+        font-size: 22px;     /* Ícone preto ligeiramente mais delicado para o mobile */
+    }
+    
+    #contador-notificacao {
+        width: 16px;         /* Ajusta a bolinha vermelha para combinar com o ícone menor */
+        height: 16px;
+        font-size: 10px;
+        top: -3px;
+        right: -3px;
+    }
+}
+.header-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 22px;
+    align-items: center;
+}
+
+
+
+@media (max-width: 480px) {
+    .conteiner-app { 
+        max-width: 430px;        /* Não deixa o app esticar até 100% da tela */
+        width: 92%;              /* Cria o recuo nas laterais para o fundo verde aparecer */
+        border-radius: 25px;     /* Garante que os 4 cantos fiquem perfeitamente redondos */
+        margin: 15px auto;       /* Centraliza o bloco na tela do aparelho */
+        padding: 25px 20px;      /* Mantém a consistência dos espaçamentos */
+    }
+    
+    .destaque-principal { 
+        height: auto; 
+    }
+}
+
+/* ==========================================================================
+   MEDIA QUERY: ESCALA AMPLIADA PARA TABLETS E NOTEBOOKS
+   ========================================================================== */
+@media (min-width: 768px) {
+    .conteiner-app {
+        max-width: 760px; /* Expande proporcionalmente em telas grandes */
+    }
+}
+
+
+.notificacao-wrapper {
+    position: relative;
+}
+
+.badge {
+    background: red;
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+/* BUSCA */
+.busca-container { padding: 0 20px 20px 20px; }
+.barra-busca {
+    display: flex;
+    background: #f1f1f1;
+    padding: 12px 20px;
+    border-radius: 30px;
+    align-items: center;
+}
+.barra-busca input {
+    border: none;
+    background: transparent;
+    flex: 1;
+    outline: none;
+    font-size: 16px;
+}
+
+/* DESTAQUE RESPONSIVO */
+.destaque-principal {
+    display: flex;
+    padding: 0 20px;
+    gap: 15px;
+    height: 45vh; /* Ocupa 45% da altura da tela do celular atual */
+    min-height: 300px;
+}
+
+.menu-inferior {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 5px;
+    width: 60px;
+    border-radius: 30px;
+    box-shadow: 0 3px 4px #000000;
+    background: #2ecc71;    
+}
+
+.menu-inferior a {
+    color: rgb(0, 0, 0);
+    background-color: #fafafa;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+   align-items: center;
+    font-size: 20px;
+
+}
+.menu-inferior a:hover{
+    color: #2ecc71;
+    background: #000000;
+} 
+
+.banner-destaque {
+    flex: 1;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.img-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto não estique */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.img-banner.active { opacity: 1; }
+
+/* CATEGORIAS ALINHADAS */
+.categorias-grid {
+    display: flex;
+    padding: 25px 20px 25px 95px; /* Alinhado com o início da foto */
+    gap: 25px;
+    justify-content: flex-start;
+    overflow: auto;
+    scrollbar-width: none;
+}
+    
+.cat-item {
+    background-color: #2ecc71;
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    
+}
+  
+.cat-item:hover{
+background: #000;
+color: #2ecc71;
+}
+a { text-decoration: none; color: inherit; }
+
+/* --- AJUSTE PARA CELULAR (Padrão) --- */
+@media (max-width: 480px) {
+    .conteiner-app { max-width: 100%; }
+    .destaque-principal { height: 300px; }
+    .cat-item { width: 60px; height: 60px; font-size: 24px; }
+}
+/* --- AJUSTE PARA CELULAR (IGUAL ÀS OUTRAS TELAS) --- */
+@media (max-width: 480px) {
+    .conteiner-app { 
+        max-width: 430px;        /* Mantém o limite padrão das outras telas */
+        width: 92%;              /* Faz ele desgrudar das bordas do celular, criando o respiro */
+        border-radius: 25px;     /* Força as bordas arredondadas ficarem visíveis */
+        margin: 15px auto;       /* Centraliza o aplicativo na tela do telemóvel */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra suave idêntica às outras telas */
+    }
+    
+    .destaque-principal { 
+        height: auto; 
+    }
+}
+/* --- AJUSTE PARA TABLET (Telas médias) --- */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .conteiner-app { max-width: 700px; border-radius: 15px; margin: 20px 0; }
+    .destaque-principal { height: 400px; } /* Foto maior no tablet */
+    .cat-item { width: 80px; height: 80px; font-size: 32px; }
+}
+
+/* --- AJUSTE PARA NOTEBOOK/PC (Telas grandes) --- */
+@media (min-width: 1025px) {
+    .conteiner-app { max-width: 900px; border-radius: 20px; margin: 40px 0; }
+    .destaque-principal { height: 500px; } /* Foto bem grande no PC */
+    .cat-item { width: 100px; height: 100px; font-size: 40px; }
+}
+@media (min-width: 768px) {
+    /* ... outras regras que já estavam aqui ... */
+
+    .logo-svg {
+        max-width: 190px; /* Tamanho um pouco mais robusto em telas grandes */
+        margin-left: -35px;
+    }
+    
+    .header-icons {
+        font-size: 34px;
+        gap: 30px;
+    }
+}

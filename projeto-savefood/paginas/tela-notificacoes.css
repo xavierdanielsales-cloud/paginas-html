@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Jersey 20", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background: #e8f5e9;
+
+}
+
+/* O Card Principal - Responsivo */
+.phone {
+    background-color: rgba(254, 254, 255, 0.9); 
+    width: 100%;
+    max-width: 450px; /* Padrão Celular */
+    padding: 30px 25px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 32px;
+    color: #333;
+}
+
+.btn-voltar {
+    color: #333;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s; /* Deixa o movimento suave */
+    display: flex;
+    align-items: center;
+}
+
+.btn-voltar:hover {
+    transform: translateX(-5px); /* Move para a esquerda ao passar o mouse */
+    color: #2ECC71;
+}
+
+/* Lista de Cards */
+#listaNotificacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Cards das Notificações */
+.card-notificacao {
+    background-color: #f0f0f0;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, background-color 0.2s;
+    overflow: hidden;
+    
+}
+
+.card-notificacao:hover {
+    background-color: #e5e5e5;
+    transform: scale(1.02);
+  border-color: #2ECC71;
+}
+
+.card-notificacao a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 18px;
+    position: relative;
+}
+
+.card-notificacao strong {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.card-notificacao p {
+    font-size: 18px;
+    color: #666;
+    padding-right: 30px; /* Evita o texto bater no badge */
+}
+
+/* Círculo Indicador (Badge) */
+.badge {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ff1900;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* --- MEDIA QUERY: TABLETS E NOTEBOOKS (Telas Maiores) --- */
+@media (min-width: 768px) {
+    .phone {
+        max-width: 700px; /* Abre mais o layout em telas grandes */
+        padding: 50px;
+        gap: 30px;
+    }
+
+    h2 {
+        font-size: 45px;
+    }
+
+    .btn-voltar {
+        font-size: 32px;
+    }
+
+    .card-notificacao strong {
+        font-size: 28px;
+    }
+
+    .card-notificacao p {
+        font-size: 22px;
+    }
+
+    .badge {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        right: 25px;
+    }
+}

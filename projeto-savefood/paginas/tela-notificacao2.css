@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Jersey 20", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+   background: #e8f5e9;
+}
+
+.phone {
+  background-color: rgba(254, 254, 255, 0.9); 
+  width: 100%;
+  max-width: 450px; /* Celular */
+  padding: 30px 25px;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Título */
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 32px;
+  color: #333;
+}
+
+.btn-voltar {
+  color: #070707;
+  font-size: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s; /* Deixa o movimento deslizante e suave */
+  display: flex;
+  align-items: center;
+}
+
+.btn-voltar:hover {
+  transform: translateX(-5px); /* Dá o empurrãozinho para a esquerda */
+  color: #2ECC71;
+}
+
+#lista-produtos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.produto {
+  background-color: #f0f0f0;
+  width: 100%;
+  padding: 18px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ddd;
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+.produto:hover {
+  background-color: #e5e5e5;
+  transform: scale(1.02);
+  border-color: #2ECC71;
+}
+
+.produto h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.produto p {
+  font-size: 18px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.produto p i {
+  color: #2ECC71; /* Ícone de mercado verdinho */
+}
+
+/* --- MEDIA QUERY: TABLETS E NOTEBOOKS (Telas Grandes) --- */
+@media (min-width: 768px) {
+  .phone {
+    max-width: 700px; /* Expande no notebook */
+    padding: 50px;
+    gap: 30px;
+  }
+
+  h2 {
+    font-size: 45px;
+  }
+
+  .btn-voltar {
+    font-size: 32px;
+  }
+
+  .produto h3 {
+    font-size: 30px;
+  }
+
+  .produto p {
+    font-size: 22px;
+  }
+}
